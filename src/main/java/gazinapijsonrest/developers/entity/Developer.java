@@ -12,22 +12,22 @@ import java.util.Date;
 public class Developer implements Serializable {
 
     @Id
-    @GeneratedValue( strategy = GenerationType.AUTO )
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column( nullable = false )
+    @Column(nullable = false)
     private String nome;
 
-    @Column( nullable = false )
+    @Column(nullable = false)
     private Character sexo;
 
-    @Column( nullable = false )
+    @Column(nullable = false)
     private Integer idade;
 
     @Column()
     private String hobby;
 
-    @Column( nullable = false )
+    @Column(nullable = false)
     private Date datanascimento;
 
     public Developer() {

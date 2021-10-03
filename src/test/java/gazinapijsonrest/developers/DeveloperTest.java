@@ -20,7 +20,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
-
 import static org.mockito.Mockito.*;
 
 
@@ -81,13 +80,16 @@ public class DeveloperTest {
     }
 
     @Test
-    public void findAllDevelopers() {
-        when(developerRepository.findAll()).thenReturn(Stream
+    public void findByDevelopers() {
+        when(developerRepository.findBy("teste", 'M', 10, "teste",
+                Date.valueOf("2000-01-01"))).thenReturn(Stream
                 .of(createDeveloperEntity(), createDeveloperEntity()).collect(Collectors.toList()));
 
-        List<Developer> developerResponseDTOS = developerService.listDeveloper();
+        List<Developer> developerResponseDTOS = developerService.listDeveloper("teste", 10,
+                Date.valueOf("2000-01-01"), 'M', "teste");
 
-        verify(developerRepository).findAll();
+        verify(developerRepository).findBy("teste", 'M', 10, "teste",
+                Date.valueOf("2000-01-01"));
         verifyNoMoreInteractions(developerRepository);
 
     }
@@ -111,7 +113,7 @@ public class DeveloperTest {
 
         DeveloperRequestDTO developerRequestDTO = new DeveloperRequestDTO();
 
-        developerRequestDTO.setNome( "teste");
+        developerRequestDTO.setNome("teste");
         developerRequestDTO.setIdade(10);
         developerRequestDTO.setHobby("hobby teste");
         developerRequestDTO.setDatanascimento(Date.valueOf("2000-01-01"));
@@ -120,7 +122,7 @@ public class DeveloperTest {
         return developerRequestDTO;
     }
 
-    public static Developer createDeveloperEntity(){
+    public static Developer createDeveloperEntity() {
 
         Developer developer = createDeveloperDTO().transformToDeveloper();
         developer.setId(1L);
@@ -132,7 +134,7 @@ public class DeveloperTest {
 
         DeveloperRequestDTO developerRequestDTO = new DeveloperRequestDTO();
 
-        developerRequestDTO.setNome( "teste");
+        developerRequestDTO.setNome("teste");
         developerRequestDTO.setIdade(10);
         developerRequestDTO.setHobby("hobby teste");
         developerRequestDTO.setDatanascimento(Date.valueOf("2000-01-01"));

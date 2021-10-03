@@ -14,18 +14,18 @@ import java.util.Date;
 public class DeveloperResponseDTO {
 
     private long id;
-    
+
     private String nome;
-    
+
     private Character sexo;
-    
+
     private int idade;
-    
+
     private String hobby;
-    
+
     private Date datanascimento;
 
-    public static DeveloperResponseDTO transformToDTO( Developer developer) {
+    public static DeveloperResponseDTO transformToDTO(Developer developer) {
         return new DeveloperResponseDTO(developer.getId(), developer.getNome(), developer.getSexo(), developer.getIdade(), developer.getHobby(), developer.getDatanascimento());
 
     }

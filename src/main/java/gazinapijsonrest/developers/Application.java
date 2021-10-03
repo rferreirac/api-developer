@@ -8,15 +8,15 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class Application {
 
-	@Bean
-	public ModelMapper modelMapper(){
-		ModelMapper modelMapper = new ModelMapper();
-		modelMapper.getConfiguration().setSkipNullEnabled(true);
-		return modelMapper;
-	}
+    @Bean
+    public ModelMapper modelMapper() {
+        ModelMapper modelMapper = new ModelMapper();
+        modelMapper.getConfiguration().setSkipNullEnabled(true);
+        return modelMapper;
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 
 }

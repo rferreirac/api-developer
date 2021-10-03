@@ -80,7 +80,7 @@ public class DeveloperRequestDTO {
     }
 
     public Developer transformToDeveloper() {
-        return new Developer( this.nome,  this.sexo,  this.idade,  this.hobby,  this.datanascimento);
+        return new Developer(this.nome, this.sexo, this.idade, this.hobby, this.datanascimento);
     }
 
 }

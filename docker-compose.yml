@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  gazin_api:
+    image: library/maven:3-jdk-11-slim
+    volumes:
+      - "./:/api_gazin"
+    working_dir: "/api_gazin"
+    ports:
+      - 8080:8080
+    command: bash -c "mvn clean && mvn install eclipse:eclipse && mvn spring-boot:run"
+    container_name: gazin_api
+    networks:
+      - compose-network
+
+networks:
+
+  compose-network:
+    driver: bridge
