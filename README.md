@@ -1,16 +1,16 @@
-# Criacao de uma API utilizando java utilizando framework Spring utilizando banco H2
-Tanto api quanto banco estao armazenados no docker sendo necessario a instalação do Docker e Docker compose para efetuar os testes.
-docker-compose
-o commando abaixo ira executar o docker-compose.yml e ira subir o docker que sera encarregado 
-do banco e api, apos o comando a api ja estara rodando na porta http://127.0.0.1:8080/developer ou http://localhost:8080/developer
+# Criação de API utilizando java com framework Spring Boot e banco de dados H2.
+Tanto API quanto banco estão armazenados no docker sendo necessário a instalação do Docker e Docker compose para efetuar os testes.
+docker-compose.
+O comando abaixo irá executar o docker-compose.yml e irá subir o docker que será encarregado do banco e api, após o comando a api ja estará rodando na porta http://127.0.0.1:8080/developer ou http://localhost:8080/developer
 gazin_api
 ```
 docker-compose up
 ```
 # API endpoints
-Para Fazer a verificação dos dados e endpoint poderá usufruir das consultas prontas, bastando importar no postman o arquivo 'Gazin_api.postman_collection.json'.
+Para fazer a verificação dos dados e endpoint poderá usufruir das consultas prontas, bastando importar no postman o arquivo 'Gazin_api.postman_collection.json'.
 
 Adiciona um novo desenvolvedor:
+
 ```
 PUT /developer
 Codes 200 / 400
